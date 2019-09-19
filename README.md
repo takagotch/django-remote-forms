@@ -45,18 +45,119 @@ class RemoteField(object):
     return field_dict
     
 class RemoteCharFeild(RemoteFeild):
+  def as_dict(self):
+    field_dict = super(RemoteCharField, self).as_dict()
+    
+    field_dict.update({
+      'max_length': self.field.max_length,
+      'min_length': self.field.min_length
+    })
+    
+    return field_dict
+    
+class RemoteIntegerField(RemoteFeild):
+  def as_dict(self):
 
 
+class RemoteIntegerField(RemoteField):
+
+class RemoteFloatField(RemoteIntegerField):
+
+class ReoteDecimalFeild(RemoteIntegerField):
+
+class RemoteTimeField(RemoteField):
 
 
+class RemoteDataField():
+
+class RemoteDataTimeField():
+
+class RemoteRegexField():
+
+class RemoteEmailFeild():
+
+class RemoteFileField():
+
+class RemoteImageField(RemoteFileField):
 
 
+class RemoteBooleanField():
+
+class RemoteNullBooleanFeild():
 
 
+class RemoteChoiceField():
 
 
+class RemoteModelChoiceField():
+
+
+class RemoteTypedChoiceField():
+
+
+class RemoteMultipleChoiceField():
+
+
+class RemoteModelMultipleChoiceField():
+
+
+class RemoteTypeMultipleChoiceField():
+
+
+class RemoteComboField(RemoteField):
+
+
+class RemoteMultiValueField(RemoteFiled):
+  def ad_dict(self):
+    field_dict = super(RemoteMultiValueField, self).as_dict()
+    
+    field_dict[] = self.field.fields
   
+    return field_dict
 
+
+class RemoteFilePathField(RemoteChoiceField):
+  def as_dict(self):
+    field_dict = super(RemoteFilePathField, self).as_dict()
+    
+    field_dict.update({
+      'path': self.field.path,
+      'match': self.field.match,
+      'recursive': self.field.recursive
+    })
+    
+    return field_dict
+
+class RemoteFilePathField(RemoteChoiceField):
+  def as_dict(self):
+    field_dict = super(RemoteFilePathField, self).as_dict()
+    
+    field_dict.update({
+      'path': self.field.path,
+      'match': self.field.match,
+      'recursive': self.field.recursive
+    })
+    
+    return field_dict
+
+class RemoteSplitDataTimeField(RemoteMultiValueField):
+  def as_dict(self):
+    field_dict = super(RemoteSplitDateTimeField, self).as_dict()
+    
+    field_dict_update({
+      'input_date_format': self.field.input_date_formats,
+      'input_time_formats': self.field.input_time_formats
+    })
+    
+    return field_dict
+
+class RemoteIPAddressField(RemoteCharField):
+  def as_dict(self):
+    return super(RemoteIPAddressField, self).as_dict()
+
+class RemoteSlugField(RemoteCharField):
+  def as_dict(self):
+    return super(RemoteSlugField, self).as_dict()
 ```
 
 ```
